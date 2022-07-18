@@ -6,6 +6,12 @@ const newUser = {
   city: "Luanda"
 }
 
+const userUpdate = {
+  name: 'Luzia Lobo',
+  avatar: 'http://picsum.photos/200/300',
+  city: 'Cazenga'
+}
+
 function getUser() {
   axios.get(url)
   .then(response => {
@@ -23,5 +29,14 @@ function addNewUser() {
     })
     .catch(error => console.log(error))
 }
-addNewUser()
+//addNewUser()
 
+function updateUser() {
+  axios
+    .put(`${url}/3`, userUpdate)
+    .then(response => {
+      alert(JSON.stringify(response.data))
+    })
+    .catch(error => console.log(error))
+}
+updateUser()
