@@ -48,4 +48,14 @@ function deleteUser () {
   })
   .catch(error => console.log(error))
 }
-deleteUser()
+//deleteUser()
+
+function getOneUser () {
+  axios.get(`${url}/3`)
+  .then(response => {
+    const data = response.data
+    renderResults.textContent = JSON.stringify(data) 
+  })
+  .catch(error => console.log(error))
+}
+getOneUser()
